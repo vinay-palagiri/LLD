@@ -2,18 +2,17 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: g++.exe build active file",
-            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "label": "C/C++: clang++ build active file",
+            "command": "/usr/bin/clang++",
             "args": [
-                "-fdiagnostics-color=always",
+                "--std=c++20",
+                "-fcolor-diagnostics",
+                "-fansi-escape-codes",
                 "-g",
-                "${workspaceFolder}\\main.cpp",
-                "${workspaceFolder}\\src\\Player.cpp",
-                "${workspaceFolder}\\src\\Board.cpp",
-                "${workspaceFolder}\\src\\Piece.cpp",
-                "${workspaceFolder}\\src\\Game.cpp",
+                "${workspaceFolder}/*cpp",
+                "${workspaceFolder}/src/*cpp",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}/${fileBasenameNoExtension}"
             ],
             "options": {
                 "cwd": "${fileDirname}"

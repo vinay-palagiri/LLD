@@ -2,21 +2,17 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: g++.exe build active file",
-            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "label": "C/C++: clang++ build active file",
+            "command": "/usr/bin/clang++",
             "args": [
-                "-fdiagnostics-color=always",
+                "--std=c++20",
+                "-fcolor-diagnostics",
+                "-fansi-escape-codes",
                 "-g",
-                "${workspaceFolder}\\Demo.cpp",
-                "${workspaceFolder}\\src\\EntryGate.cpp",
-                "${workspaceFolder}\\src\\ExitGate.cpp",
-                "${workspaceFolder}\\src\\ParkingLot.cpp",
-                "${workspaceFolder}\\src\\ParkingSpot.cpp",
-                "${workspaceFolder}\\src\\ParkingSpotManager.cpp",
-                "${workspaceFolder}\\src\\Vehicle.cpp",
-                "${workspaceFolder}\\src\\Ticket.cpp",
+                "${workspaceFolder}/*cpp",
+                "${workspaceFolder}/src/*cpp",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}/${fileBasenameNoExtension}"
             ],
             "options": {
                 "cwd": "${fileDirname}"
